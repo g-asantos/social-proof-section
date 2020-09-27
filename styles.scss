@@ -1,0 +1,263 @@
+$darkpink: hsl(300, 43%, 22%);
+$softpink: hsl(333, 80%, 67%);
+$darkmagenta: hsl(303, 10%, 53%);
+$lightmagenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+$font: spartan;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+html{
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-size: 15px;
+    background-image: url("./images/bg-pattern-top-desktop.svg");
+    background-size: cover;
+    font-family: $font, sans-serif;
+    
+}
+
+
+main{
+    width: 100%;
+    max-width: 1440px;
+    display: grid;
+    grid-template-rows: 50vh 50vh;
+}
+
+
+
+.topContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin-top: 10px;
+}
+
+.bottomContainer{
+    width: 100%;
+    max-width: 1440px;
+}
+.loveContainer{
+    margin-left: 20px;
+    p{
+        color: $darkpink;
+        font-weight: 700;
+        font-family: $font;
+        font-size: 3em;
+        text-align: left;
+        width: 55%;
+
+        
+    }
+
+    p~p{
+        color: $darkmagenta;
+        font-weight: 500;
+        font-family: $font;
+        font-size: 1.5em;
+        width: 100%;
+    }
+}
+
+.starsContainer{
+    position: relative;
+    left: 1em;
+    .card{
+        display: flex;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 5px;
+        color: $darkpink;
+        font-weight: 700;
+        background-color: $lightmagenta;
+        width: 80%;
+
+        p{
+            margin-left: 30px;
+        }
+    }
+
+    .card + .card{
+        position: relative;
+        left: 40px;
+    }
+
+    .card + .card + .card{
+        position: relative;
+        left: 80px;
+    }
+
+    img{
+        margin-right: 10px;
+    }
+}
+
+.reviewContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 32.3%));
+    width: 100%;
+    max-width: 1440px;
+    
+}
+
+.reviewCard{
+    border-radius: 2%;
+    margin: 1em;
+    padding: 2em;
+    background-color: $darkpink;
+    color: $white;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    .client{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        margin: 2em 3em;
+        position: relative;
+        right: 2em;
+
+        img{
+            width: 70%;
+            border-radius: 50%;
+        }
+
+        p{
+            display: grid;
+        }
+    }
+
+    .clientText{
+        display: flex;
+        flex-direction: column;
+
+        p{
+            font-weight: 700;
+            width: 100%;
+        }
+
+        p+p{
+            margin-top: 5px;
+            font-weight: initial;
+            color: $darkmagenta;
+        }
+    }
+
+    .reviewText{
+        font-weight: 500;
+        width: 90%;
+    }
+}
+
+.reviewCard + .reviewCard{
+    position: relative;
+    top: 2em;
+}
+
+.reviewCard + .reviewCard + .reviewCard{
+    position: relative;
+    top: 4em;
+}
+
+
+@media (max-width: 376px){
+
+    body{
+        background-size: contain;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        max-width: 375px;
+        font-size: 0.7em;
+    }
+
+    .topContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .loveContainer{
+        display: flex;
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p{
+            width: 90%;
+            text-align: center;
+        }
+
+        p~p{
+            width: 95%;
+        }
+    }
+
+    .starsContainer{
+        width: 95%;
+
+        .card{
+            margin: initial;
+            width: 100%;
+            position: relative;
+            left: initial;
+            right: 10px;
+            margin: 2em 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+
+
+            p{
+                margin-left: initial;
+                margin-top: 1em;
+            }
+        }
+
+        .card + .card{
+            position: relative;
+            left: initial;
+        }
+
+        .card + .card + .card{
+            position: relative;
+            left: initial;
+        }
+
+        
+    }
+
+
+
+    .reviewContainer{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        width: 100%;
+        max-width: 1440px;
+        
+    }
+    
+}
